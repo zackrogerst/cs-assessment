@@ -1,0 +1,71 @@
+Insert on the larger arrays takes much longer than append 
+but as the arrays get smaller the times get close together.
+Append does get faster in the shorter arrays but scales at a lesser rate.
+On tinyArray the insert time was slower than it was on smallArray
+
+insert is slower due to the unshift() method being used. 
+This has a time complexity higher than push()
+
+unshift --- O(n)
+push    --- O(1)
+
+
+┌────────────┬───────────────────┐
+│    Keys    │      Values       │
+├────────────┼───────────────────┤
+│ resultsFor │ 'extraLargeArray' │
+│   append   │    '2.4214 ms'    │
+│   insert   │   '909.739 ms'    │
+└────────────┴───────────────────┘
+
+extraLargeArray:
+append is 374 times faster than insert
+insert timed very poorly with a sizeable array
+
+┌────────────┬──────────────┐
+│    Keys    │    Values    │
+├────────────┼──────────────┤
+│ resultsFor │ 'largeArray' │
+│   append   │ '0.3023 ms'  │
+│   insert   │ '7.4442 ms'  │
+└────────────┴──────────────┘
+
+largeArray: 
+append is 24.6 times faster than insert
+insert timed better than extraLargeArray but was still very slow in comparison
+
+┌────────────┬───────────────┐
+│    Keys    │     Values    │
+├────────────┼───────────────┤
+│ resultsFor │ 'mediumArray' │
+│   append   │  '198.8 μs'   │
+│   insert   │  '264.3 μs'   │
+└────────────┴───────────────┘
+
+mediumArray: 
+append is 1.3 times faster than insert
+insert timed much better than largeArray but still preffered to use append function
+
+┌────────────┬──────────────┐
+│    Keys    │    Values    │
+├────────────┼──────────────┤
+│ resultsFor │ 'smallArray' │
+│   append   │   '7.2 μs'   │
+│   insert   │   '9.5 μs'   │
+└────────────┴──────────────┘
+
+smallArray: 
+append is 1.3 times faster than insert
+insert timed close to the same as mediumArray
+
+┌────────────┬─────────────┐
+│    Keys    │   Values    │
+├────────────┼─────────────┤
+│ resultsFor │ 'tinyArray' │
+│   append   │   '6 μs'    │
+│   insert   │   '16 μs'   │
+└────────────┴─────────────┘
+
+tinyArray: 
+append is 2.6 times faster than insert
+insert timed worse than on small and medium
